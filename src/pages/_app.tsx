@@ -1,33 +1,24 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import Head from "next/head";
-import { usePageView } from "@hooks";
-import { config } from "@site.config";
+import { ChakraProvider } from '@chakra-ui/react';
+import { usePageView } from '@hooks';
+import { config } from '@site.config';
 
-import theme from "../theme";
-import { AppProps } from "next/app";
+import theme from '../theme';
+import { AppProps } from 'next/app';
+import { PageSEO } from '@components/PageSEO';
+import { SiteHeader } from '@components/SiteHeader';
 
 function MyApp({ Component, pageProps }: AppProps) {
   usePageView();
-
-  const title = config.siteMeta.title;
-  const pageUrl = config.baseUrl;
-  const description = config.siteMeta.description;
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta property="og:title" content={title} />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:site" content={title} />
-        <meta />
-        {!!description && (
-          <>
-            <meta name="description" content={description} />
-            <meta property="og:description" content={description} />
-          </>
-        )}
-      </Head>
+      <PageSEO
+        title={config.siteMeta.title}
+        description={config.siteMeta.description}
+        path="/"
+        noTitleTemplate={true}
+      />
       <ChakraProvider resetCSS theme={theme}>
+        <SiteHeader />
         <Component {...pageProps} />
       </ChakraProvider>
     </>

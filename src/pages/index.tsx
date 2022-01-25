@@ -5,52 +5,45 @@ import {
   List,
   ListIcon,
   ListItem,
-} from '@chakra-ui/react'
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
+  Stack,
+  chakra,
+  Heading,
+  HStack,
+  Box,
+  useColorMode,
+} from '@chakra-ui/react';
+import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons';
 
-import { Hero } from '../components/Hero'
-import { Container } from '../components/Container'
-import { Main } from '../components/Main'
-import { DarkModeSwitch } from '../components/DarkModeSwitch'
-import { CTA } from '../components/CTA'
-import { Footer } from '../components/Footer'
+import { Container } from '../components/Container';
+import { Footer } from '../components/Footer';
+import { basicShortcutData, textShortcutData } from '@data/shortcut-data';
+import { ShortcutBlockContainer } from '@components/ShortcutBlock';
 
-const Index = () => (
-  <Container height="100vh">
-    <Hero />
-    <Main>
-      <Text>
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{' '}
-        <Code>typescript</Code>.
-      </Text>
+const Index = () => {
+  const { colorMode } = useColorMode();
+  return (
+    <Container>
+      <chakra.main>
+        <Stack spacing={7}>
+          <Heading as="h2" fontSize="xl">
+            基本機能ショートカット
+          </Heading>
+          {basicShortcutData.map((x) => {
+            return <ShortcutBlockContainer key={x.id} {...x} />;
+          })}
+        </Stack>
+        <Stack spacing={7} marginTop="40px">
+          <Heading as="h2" fontSize="xl">
+            テキスト系ショートカット
+          </Heading>
+          {textShortcutData.map((x) => {
+            return <ShortcutBlockContainer key={x.id} {...x} />;
+          })}
+        </Stack>
+      </chakra.main>
+      <Footer />
+    </Container>
+  );
+};
 
-      <List spacing={3} my={0}>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink
-            isExternal
-            href="https://chakra-ui.com"
-            flexGrow={1}
-            mr={2}
-          >
-            Chakra UI <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
-            Next.js <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-      </List>
-    </Main>
-
-    <DarkModeSwitch />
-    <Footer>
-      <Text>Next ❤️ Chakra</Text>
-    </Footer>
-    <CTA />
-  </Container>
-)
-
-export default Index
+export default Index;
