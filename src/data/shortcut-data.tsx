@@ -9,7 +9,6 @@ export type Shortcut = {
   keyName: string | React.ReactNode;
   description?: string;
   isModifier?: boolean;
-  multiple?: Shortcut[];
 };
 
 export const basicShortcutData: ShortCutDataType[] = [
@@ -158,23 +157,109 @@ export const textShortcutData: ShortCutDataType[] = [
         isModifier: true,
       },
       {
-        keyName: '⇧',
-        description: 'shift',
+        keyName: '⌥',
+        description: 'option',
+      },
+      {
+        keyName: 'L',
+      },
+    ],
+    action: 'テキスト左揃え',
+  },
+  {
+    id: 5,
+    shortcutList: [
+      {
+        keyName: '⌘',
+        description: 'command',
         isModifier: true,
       },
       {
-        keyName: '',
-        multiple: [
-          {
-            keyName: '<',
-          },
-          {
-            keyName: '>',
-          },
-        ],
+        keyName: '⌥',
+        description: 'option',
+      },
+      {
+        keyName: 'T',
       },
     ],
-    action: 'フォントサイズ調整',
+    action: 'テキスト中央揃え',
+  },
+  {
+    id: 6,
+    shortcutList: [
+      {
+        keyName: '⌘',
+        description: 'command',
+        isModifier: true,
+      },
+      {
+        keyName: '⌥',
+        description: 'option',
+      },
+      {
+        keyName: 'J',
+      },
+    ],
+    action: 'テキスト両端揃え',
+  },
+];
+
+export const objectShortcutData: ShortCutDataType[] = [
+  {
+    id: 1,
+    shortcutList: [
+      {
+        keyName: '⌥',
+        description: 'option',
+        isModifier: true,
+      },
+      {
+        keyName: 'A',
+      },
+    ],
+    action: '左に整列',
+  },
+  {
+    id: 2,
+    shortcutList: [
+      {
+        keyName: '⌥',
+        description: 'option',
+        isModifier: true,
+      },
+      {
+        keyName: 'H',
+      },
+    ],
+    action: '中央に整列',
+  },
+  {
+    id: 3,
+    shortcutList: [
+      {
+        keyName: '⌥',
+        description: 'option',
+        isModifier: true,
+      },
+      {
+        keyName: 'V',
+      },
+    ],
+    action: '縦位置中央に整列',
+  },
+  {
+    id: 4,
+    shortcutList: [
+      {
+        keyName: '⌥',
+        description: 'option',
+        isModifier: true,
+      },
+      {
+        keyName: 'D',
+      },
+    ],
+    action: '左に整列',
   },
   {
     id: 5,
@@ -185,17 +270,23 @@ export const textShortcutData: ShortCutDataType[] = [
         isModifier: true,
       },
       {
-        keyName: '',
-        multiple: [
-          {
-            keyName: '<',
-          },
-          {
-            keyName: '>',
-          },
-        ],
+        keyName: 'W',
       },
     ],
-    action: 'コピー',
+    action: '上に整列',
+  },
+  {
+    id: 6,
+    shortcutList: [
+      {
+        keyName: '⌥',
+        description: 'option',
+        isModifier: true,
+      },
+      {
+        keyName: 'S',
+      },
+    ],
+    action: '下に整列',
   },
 ];
