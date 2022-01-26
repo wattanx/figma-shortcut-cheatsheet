@@ -1,4 +1,4 @@
-import { useColorMode, Box } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 export const Container: React.FC<{ children: React.ReactNode }> = ({
   children,
