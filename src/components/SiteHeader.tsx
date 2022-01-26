@@ -16,7 +16,7 @@ export const SiteHeader: React.FC<{ borderBottomColor?: string }> = ({
       backgroundColor={colorMode === 'dark' ? '#000' : '#fff'}
     >
       <Box maxW="780px" margin="0 auto">
-        <HStack alignItems="center" fontWeight="bold" px="4">
+        <HStack alignItems="center" fontWeight="bold" px="6">
           <Box>
             <Link href="/" passHref>
               <Box as="a" alignItems="center" textDecoration="none">
