@@ -1,7 +1,7 @@
 export const config = {
   siteMeta: {
-    title: '',
-    description: '',
+    title: 'Figma shortcut cheatsheet',
+    description: 'Figma shortcut cheatsheet',
   },
   siteRoot:
     process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3000',
