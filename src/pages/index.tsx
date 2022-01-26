@@ -1,23 +1,15 @@
-import {
-  Link as ChakraLink,
-  Text,
-  Code,
-  List,
-  ListIcon,
-  ListItem,
-  Stack,
-  chakra,
-  Heading,
-  HStack,
-  Box,
-  useColorMode,
-} from '@chakra-ui/react';
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons';
+import { Stack, chakra, Heading, useColorMode } from '@chakra-ui/react';
 
 import { Container } from '../components/Container';
 import { Footer } from '../components/Footer';
-import { basicShortcutData, textShortcutData } from '@data/shortcut-data';
+import {
+  basicShortcutData,
+  objectShortcutData,
+  textShortcutData,
+} from '@data/shortcut-data';
 import { ShortcutBlockContainer } from '@components/ShortcutBlock';
+import { AdjustFontSize } from '@components/AdjustFontSize';
+import { AdjustKerning } from '@components/AdjustKerning';
 
 const Index = () => {
   const { colorMode } = useColorMode();
@@ -25,7 +17,7 @@ const Index = () => {
     <Container>
       <chakra.main>
         <Stack spacing={7}>
-          <Heading as="h2" fontSize="xl">
+          <Heading as="h2" fontSize="xl" color="rgb(255, 114, 98)">
             基本機能ショートカット
           </Heading>
           {basicShortcutData.map((x) => {
@@ -33,10 +25,21 @@ const Index = () => {
           })}
         </Stack>
         <Stack spacing={7} marginTop="40px">
-          <Heading as="h2" fontSize="xl">
+          <Heading as="h2" fontSize="xl" color="rgb(10, 207, 131)">
             テキスト系ショートカット
           </Heading>
           {textShortcutData.map((x) => {
+            return <ShortcutBlockContainer key={x.id} {...x} />;
+          })}
+          {/** TODO: replace component */}
+          <AdjustFontSize colorMode={colorMode} />
+          <AdjustKerning colorMode={colorMode} />
+        </Stack>
+        <Stack spacing={7} marginTop="40px">
+          <Heading as="h2" fontSize="xl" color="rgb(162, 89, 255)">
+            オブジェクト整列系ショートカット
+          </Heading>
+          {objectShortcutData.map((x) => {
             return <ShortcutBlockContainer key={x.id} {...x} />;
           })}
         </Stack>
