@@ -7,8 +7,6 @@ export default class Document extends NextDocument {
     return (
       <Html>
         <Head>
-          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
@@ -25,6 +23,8 @@ export default class Document extends NextDocument {
             `,
             }}
           />
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png"></link>
         </Head>
         <body>
           {/* Make Color mode to persists when you refresh the page. */}
