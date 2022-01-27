@@ -24,7 +24,7 @@ export const PageSEO: React.FC<Props> = (props) => {
       ? process.env.NEXT_PUBLIC_BASEURL
       : 'http://localhost:3000';
   const pageUrl = baseUrl + useRouter().pathname;
-  const ogImageUrl = baseUrl + '/figma-cheat-sheet.png';
+  const ogImageUrl = baseUrl + '/figma-cheat-sheet-ogp.png';
 
   return (
     <NextHeadSeo
