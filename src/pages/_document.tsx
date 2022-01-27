@@ -1,12 +1,14 @@
-import NextDocument, { Html, Head, Main, NextScript } from "next/document";
-import { ColorModeScript } from "@chakra-ui/react";
-import { GA_TRACKING_ID } from "@framework";
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
+import { ColorModeScript } from '@chakra-ui/react';
+import { GA_TRACKING_ID } from '@framework';
 
 export default class Document extends NextDocument {
   render() {
     return (
       <Html>
         <Head>
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}

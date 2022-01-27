@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
-import NextHeadSeo from "next-head-seo";
-import { config } from "../site.config";
+import { useRouter } from 'next/router';
+import NextHeadSeo from 'next-head-seo';
+import { config } from '../site.config';
 
 type Props = {
   path: string;
@@ -20,28 +20,28 @@ export const PageSEO: React.FC<Props> = (props) => {
   } = props;
 
   const baseUrl =
-    process.env.NODE_ENV === "production"
+    process.env.NODE_ENV === 'production'
       ? process.env.NEXT_PUBLIC_BASEURL
-      : "http://localhost:3000";
+      : 'http://localhost:3000';
   const pageUrl = baseUrl + useRouter().pathname;
-  const ogImageUrl = baseUrl + "/neko.png";
+  const ogImageUrl = baseUrl + '/figma-cheat-sheet.png';
 
   return (
     <NextHeadSeo
       title={noTitleTemplate ? title : `${title} - wattanx`}
       canonical={pageUrl}
       description={description}
-      robots={noindex ? "noindex, nofollow" : undefined}
+      robots={noindex ? 'noindex, nofollow' : undefined}
       og={{
         title,
         description,
         url: pageUrl,
         image: ogImageUrl,
-        type: "article",
-        siteName: "wattanx",
+        type: 'article',
+        siteName: 'figma cheat sheet',
       }}
       twitter={{
-        card: "summary_large_image",
+        card: 'summary_large_image',
       }}
     />
   );

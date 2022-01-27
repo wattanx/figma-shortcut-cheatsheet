@@ -46,6 +46,13 @@ const theme = extendTheme({
       },
     },
   },
+  colors: {
+    figma: {
+      orange: 'rgb(255, 114, 98)',
+      green: 'rgb(10, 207, 131)',
+      purple: 'rgb(162, 89, 255)',
+    },
+  },
 });
 
 export default theme;

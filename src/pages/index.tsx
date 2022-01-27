@@ -17,7 +17,7 @@ const Index = () => {
     <Container>
       <chakra.main>
         <Stack spacing={7}>
-          <Heading as="h2" fontSize="xl" color="rgb(255, 114, 98)">
+          <Heading as="h2" fontSize="xl" color="figma.orange">
             基本機能ショートカット
           </Heading>
           {basicShortcutData.map((x) => {
@@ -25,7 +25,7 @@ const Index = () => {
           })}
         </Stack>
         <Stack spacing={7} marginTop="40px">
-          <Heading as="h2" fontSize="xl" color="rgb(10, 207, 131)">
+          <Heading as="h2" fontSize="xl" color="figma.green">
             テキスト系ショートカット
           </Heading>
           {textShortcutData.map((x) => {
@@ -36,7 +36,7 @@ const Index = () => {
           <AdjustKerning colorMode={colorMode} />
         </Stack>
         <Stack spacing={7} marginTop="40px">
-          <Heading as="h2" fontSize="xl" color="rgb(162, 89, 255)">
+          <Heading as="h2" fontSize="xl" color="figma.purple">
             オブジェクト整列系ショートカット
           </Heading>
           {objectShortcutData.map((x) => {
