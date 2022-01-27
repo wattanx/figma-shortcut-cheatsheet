@@ -11,7 +11,7 @@ export const AdjustFontSize: React.FC<{ colorMode: string }> = ({
     p={4}
     maxW="400px"
     borderRadius="20px"
-    bg={colorMode === 'dark' ? '#202225' : '#FFF'}
+    bg="base"
   >
     <Text fontSize="md" fontWeight="bold">
       フォントサイズ調整

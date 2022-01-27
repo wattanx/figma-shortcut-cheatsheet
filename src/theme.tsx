@@ -38,6 +38,14 @@ const theme = extendTheme({
   useSystemColorMode: true,
   fonts,
   breakpoints,
+  semanticTokens: {
+    colors: {
+      base: {
+        default: '#fff',
+        _dark: '#202225',
+      },
+    },
+  },
 });
 
 export default theme;
