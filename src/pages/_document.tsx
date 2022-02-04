@@ -25,6 +25,7 @@ export default class Document extends NextDocument {
           />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
           <link rel="apple-touch-icon" href="/apple-touch-icon.png"></link>
+          <script src="https://cdn-blocks.karte.io/f0ca8bc4accad805123e79f141b1b752/builder.js"></script>
         </Head>
         <body>
           {/* Make Color mode to persists when you refresh the page. */}
