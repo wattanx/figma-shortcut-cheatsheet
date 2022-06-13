@@ -1,6 +1,6 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 import { ColorModeScript } from '@chakra-ui/react';
-import { GA_TRACKING_ID } from '@framework';
+import { GA_TRACKING_ID, UNIVERSAL_ANALYTICS_ID } from '@framework';
 
 export default class Document extends NextDocument {
   render() {
@@ -12,6 +12,11 @@ export default class Document extends NextDocument {
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
           />
           <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${UNIVERSAL_ANALYTICS_ID}`}
+          ></script>
+
+          <script
             dangerouslySetInnerHTML={{
               __html: `
               window.dataLayer = window.dataLayer || [];
@@ -20,6 +25,7 @@ export default class Document extends NextDocument {
               gtag('config', '${GA_TRACKING_ID}', {
                 page_path: window.location.pathname,
               });
+              gtag('config', '${UNIVERSAL_ANALYTICS_ID}');
             `,
             }}
           />
