@@ -17,6 +17,13 @@ const Index = () => {
     <Container>
       <chakra.main>
         <Stack spacing={7}>
+          <chakra.a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://portfolio-git-crossdomain-test-wattanx.vercel.app/"
+          >
+            wattanx preview
+          </chakra.a>
           <Heading as="h2" fontSize="xl" color="figma.orange">
             基本機能ショートカット
           </Heading>
