@@ -17,10 +17,7 @@ export default class Document extends NextDocument {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('set', 'linker', {
-                'domains': ['portfolio-git-crossdomain-test-wattanx.vercel.app'],
-                'accept_incoming': true
-              })
+             
             `,
             }}
           />
